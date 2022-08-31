@@ -1,0 +1,442 @@
+@import "./base/base";
+@import "./abstract/variable";
+@import "./abstract/mixin";
+
+
+// Header
+.header {
+  max-width: 100%;
+  height: 50px;
+  background-color: $bg-c1-dark;
+  position: relative;
+  img {
+    position: absolute;
+    width: 116px;
+    height: 32px;
+    left: 24px;
+    top: 10px;
+  }
+  .header-item {
+    position: absolute;
+    left: calc(1027 / 1280 * 100%);
+    img {
+      position: relative;
+      width: 31px;
+      height: 31px;
+      top: 0;
+    }
+    span {
+      @include text($text-3xl, $text-light, $text-c1-light);
+      position: relative;
+      left: 20px;
+      top: 6px;
+    }
+    .login {
+      @include text($text-normal, $text-light, $text-c2-light);
+      position: relative;
+      left: 20px;
+    }
+    .register {
+      position: relative;
+      left: 38px;
+      @include text($text-normal, $text-light, $text-c2-light);
+    }
+  }
+}
+
+//menu
+.menu {
+  background-color: $bg-c1-light;
+  .container {
+    max-width: 100%;
+    padding-left: 0;
+    a {
+      display: inline-block;
+      margin-top: 16px 0;
+      @include text($text-2xl, $text-regular, $text-c1-dark);
+      padding-bottom: 10px;
+      padding-top: 16px;
+    }
+    .menu-home {
+      margin-left: 25px;
+      border-bottom: 1px solid #000000;
+    }
+    .menu-men {
+      margin-left: 24px;
+    }
+    .menu-woman {
+      margin-left: 37px;
+    }
+    .menu-kid {
+      margin-left: 39px;
+    }
+    .menu-sport {
+      margin-left: 40px;
+    }
+  }
+}
+
+//Carousel
+.carousel {
+  margin-bottom: 30px;
+  .carousel-indicators {
+    button {
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      z-index: 200;
+      margin-bottom: 88px;
+      background-color: rgba(217, 217, 217, 0);
+      border: 1px solid rgba(0, 0, 0, 0.13);
+    }
+    .carousel-button {
+      margin-left: 23px;
+      margin-right: 17px;
+    }
+  }
+  .carousel-inner {
+    .carousel-item {
+      max-width: 100%;
+      height: 500px;
+      position: relative;
+      img {
+        max-width: 100%;
+        position: absolute;
+        width: 821px;
+        height: 392px;
+        left: calc(86 / 1280 * 100%);
+        top: 5px;
+      }
+      .text {
+        position: absolute;
+        left: calc(930 / 1280 * 100%);
+        top: 124px;
+        h2 {
+          @include text($text-4xl, $text-light, $bg-c1-dark);
+          line-height: 48.41px;
+        }
+        p {
+          @include text($text-2xl, $text-light, $bg-c1-dark);
+          line-height: 24.2px;
+          margin-bottom: 30px;
+        }
+        button {
+          @include button(
+            $text-2xl,
+            $text-light,
+            $text-c1-light,
+            $bg-c1-primary,
+            13px 35px,
+            1px solid #f8b653,
+            0
+          );
+          position: relative;
+          z-index: 100;
+        }
+      }
+      .carousel-background {
+        position: absolute;
+        width: (1334/1280 * 100%);
+        height: (393/500 * 100%);
+        left: 0;
+        top: 127px;
+      }
+    }
+  }
+  .carousel-control-prev {
+    img {
+      position: absolute;
+      left: 18px;
+      top: 175px;
+    }
+  }
+  .carousel-control-next {
+    img {
+      position: absolute;
+      right: 12.86px;
+      top: 175px;
+    }
+  }
+}
+
+//product
+.product {
+  padding-bottom: 104px;
+  .container {
+    .card-body2 {
+      display: flex;
+      padding: 0;
+      a {
+        @include button(
+          $text-2xl,
+          $text-light,
+          $text-c1-light,
+          $bg-c1-primary,
+          18px 27px 18px 39px,
+          1px solid #f8b653,
+          0
+        );
+        width: calc(175 / 334 * 100%);
+        height: 64px;
+      }
+      span {
+        width: calc(160 / 334 * 100%);
+        height: 64px;
+        line-height: 29.05px;
+        @include button(
+          $text-product-primary,
+          $text-semibold,
+          $text-c1-dark,
+          $bg-c3-light,
+          18px 40px 18px 66px,
+          1px solid #dedddc,
+          0
+        );
+      }
+    }
+  }
+}
+
+//footer
+
+.footer {
+  .footer-main {
+    background-color: $bg-c2-light;
+    .container {
+      .row {
+        padding: 20px 40px;
+        .col-4 {
+          .item {
+            h2 {
+              @include text($text-2xl, $text-bold, $text-c1-dark);
+              margin-bottom: 15px;
+            }
+            p {
+              margin-bottom: 10px;
+              @include text($text-normal, $text-regular, $text-c1-dark);
+            }
+            .link {
+              @include text($text-normal, $text-regular, $text-footer);
+            }
+          }
+          .item-1 {
+            height: 100%;
+            border-right: 1px solid #cbc9c9;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    background-color: $bg-c3-light;
+  }
+}
+
+//register
+.register {
+  .container-fluid{
+    h2 {
+      margin-top: 30px;
+      text-align: center;
+      @include text($text-4xl, $text-regular, $text-c1-dark);
+    }
+    form {
+      margin: 60px 0 27px;
+      margin-left: calc(120/1280 * 100%);
+      input {
+        width: calc(482 / 1280 * 100%);
+        margin-right: calc((100 / 1280 * 100%));
+        height: 50px;
+        margin-bottom: 30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 5px solid;
+        outline: none;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(174, 24, 226, 1) 100%
+        );
+        &::placeholder {
+          @include text($text-3xl, $text-regular, $text-c1-dark);
+        }
+      }
+      span {
+        @include text($text-2xl, $text-regular, $text-c3-secondary);
+        position: relative;
+        left: calc((-132 / 1280 * 100%));
+      }
+      .gender {
+        display: inline;
+        width: (544 / 1280 * 100%);
+        strong {
+          display: inline-block;
+          @include text($text-3xl, $text-regular, $text-c1-dark);
+          margin-right: 28px;
+        }
+        label {
+          @include text($text-3xl, $text-regular, $text-c1-dark);
+        }
+        .radio-custom {
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+          font-size: 30px;
+          user-select: none;
+          padding-left: 40px;
+          margin-right: 48px;
+          margin-left: 28px;
+        }
+        .radio-custom input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: -35px;
+          width: 65px;
+          height: 50px;
+          background: #eee;
+          border-radius: 50%;
+        }
+        .radio-custom:hover .checkmark {
+          background: #ccc;
+        }
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+        .radio-custom .checkmark:after {
+          top: 50%;
+          left: 50%;
+          width: 39.25px;
+          height: 30px;
+          border-radius: 50%;
+          border: solid 3px #ae18e2;
+          transform: translate(-50%, -50%);
+          background-color: #ae18e2;
+        }
+        .radio-custom input:checked ~ .checkmark {
+          background: $bg-c5-light;
+        }
+        .radio-custom input:checked ~ .checkmark:after {
+          display: block;
+        }
+      }
+    }
+    button {
+      display: block;
+      margin-left: calc(700 / 1280 * 100%);
+      height: 50px;
+      width: 290px;
+      @include button($text-3xl,$text-regular,$text-c4-light,$bg-detail-primary,0,1px solid $bg-detail-primary,0);
+      margin-bottom: 40px;
+      margin-top: 60px;
+    }
+  }
+}
+
+//detail
+.detail {
+  .container-fluid {
+    .row {
+      .col-5 {
+        width: 334px;
+        margin-top: 58px;
+        margin-left: calc(65 / 1280 * 100%);
+        margin-bottom: calc(117 / 1280 * 100%);
+        margin-right: calc(127 / 1280 * 100%);
+        img {
+          width: 100%;
+        }
+      }
+      .col-7 {
+        margin-top: 67px;
+        h2 {
+          @include text($text-3xl, $text-light, $text-c1-dark);
+          margin-bottom: 10px;
+        }
+        .product-desc {
+          @include text($text-normal, $text-regular, $text-c2-dark);
+        }
+        .size-text {
+          @include text(
+            $text-product-primary,
+            $text-medium,
+            $text-c1-secondary
+          );
+          margin-bottom: 15px;
+        }
+        .size {
+          a {
+            @include button(
+              $text-product-primary,
+              $text-semibold,
+              $text-c3-dark,
+              $bg-c4-light,
+              10px,
+              1px solid $bg-c4-light,
+              0
+            );
+            margin-right: 20px;
+          }
+        }
+        .price {
+          margin: 15px 0;
+          @include text($text-3xl, $text-semibold, $text-c2-secondary);
+        }
+        .number {
+          button {
+            @include button(
+              $text-3xl,
+              $text-regular,
+              $text-c4-light,
+              none,
+              15px,
+              1px solid $bg-c4-light,
+              0
+            );
+            height: 50px;
+            line-height: 18px;
+            width: 50px;
+            background: linear-gradient(
+              90deg,
+              rgba(97, 129, 243, 1) 100%,
+              rgba(124, 151, 245, 1) 100%
+            );
+            margin-right: 20px;
+          }
+          span {
+            margin-right: 20px;
+            @include text($text-3xl, $text-regular, $text-c1-dark);
+          }
+        }
+        .addToCart {
+          margin-top: 7px;
+          button {
+            @include button(
+              $text-product-primary,
+              $text-medium,
+              $text-c5-light,
+              none,
+              18px 24px,
+              1px solid transparent,
+              0
+            );
+            background: linear-gradient(
+              270deg,
+              rgba(62, 32, 248, 0.9) 5.14%,
+              #d017ee 89.71%
+            );
+          }
+        }
+      }
+    }
+  }
+}

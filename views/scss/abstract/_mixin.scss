@@ -1,0 +1,14 @@
+@mixin text ($fz,$fw,$c){
+    font-size: $fz;
+    font-weight: $fw;
+    color: $c;
+}
+
+@mixin button($fz,$fw,$c,$bg,$pd,$bd,$br){
+    @include text($fz,$fw,$c);
+    background-color: $bg;
+    padding: $pd;
+    border: $bd;
+    border-radius: $br;
+    cursor: pointer;
+}
