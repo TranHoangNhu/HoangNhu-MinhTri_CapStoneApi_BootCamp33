@@ -2,76 +2,155 @@
 @import "./abstract/variable";
 @import "./abstract/mixin";
 
-
 // Header
 .header {
   max-width: 100%;
   height: 50px;
   background-color: $bg-c1-dark;
   position: relative;
-  img {
-    position: absolute;
-    width: 116px;
-    height: 32px;
-    left: 24px;
-    top: 10px;
+  .container-fluid {
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      margin: 10px 0 8px 24px;
+      width: 116px;
+      height: 32px;
+    }
+    .header-item {
+      width: 260px;
+      height: 50px;
+      margin-right: 20px;
+      img {
+        width: 31px;
+        height: 31px;
+        margin-bottom: 10px;
+        @media screen and (max-width: 768px) {
+          margin-left: 60%;
+        }
+        @media screen and (max-width: 300px) {
+          margin-left: 25%;
+        }
+      }
+      span {
+        @include text($text-3xl, $text-light, $text-c1-light);
+        display: inline-block;
+        margin: 6px 0 8px;
+        line-height: 36.31px;
+        margin-right: 10px;
+      }
+      .header-links {
+        display: inline-block;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+        .header-login {
+          @include text($text-normal, $text-light, $text-c2-light);
+          margin-top: 15px;
+          line-height: 19.36px;
+          margin-right: 30px;
+          display: inline-block;
+          @media screen and (max-width: 768px) {
+            display: block;
+            text-align: center;
+            margin-right: 0;
+            margin-bottom: 30px;
+          }
+        }
+        .header-register {
+          @include text($text-normal, $text-light, $text-c2-light);
+          margin-top: 15px;
+          line-height: 19.36px;
+          display: inline-block;
+          @media screen and (max-width: 768px) {
+            display: block;
+            text-align: center;
+            padding-bottom: 40px;
+          }
+        }
+      }
+      .nav-active {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 100;
+        background-color: $bg-c1-dark;
+        animation: fadeIn 2s ;
+      }
+      i {
+        @include text($text-normal, 0, $text-c2-light);
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        display: none;
+        @media screen and (max-width: 768px) {
+          display: inline-block;
+        }
+      }
+    }
   }
-  .header-item {
-    position: absolute;
-    left: calc(1027 / 1280 * 100%);
-    img {
-      position: relative;
-      width: 31px;
-      height: 31px;
-      top: 0;
-    }
-    span {
-      @include text($text-3xl, $text-light, $text-c1-light);
-      position: relative;
-      left: 20px;
-      top: 6px;
-    }
-    .login {
-      @include text($text-normal, $text-light, $text-c2-light);
-      position: relative;
-      left: 20px;
-    }
-    .register {
-      position: relative;
-      left: 38px;
-      @include text($text-normal, $text-light, $text-c2-light);
-    }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 //menu
 .menu {
   background-color: $bg-c1-light;
+  @media screen and (max-width: 500px) {
+    padding-top: 14px;
+  }
   .container {
     max-width: 100%;
     padding-left: 0;
     a {
       display: inline-block;
-      margin-top: 16px 0;
       @include text($text-2xl, $text-regular, $text-c1-dark);
       padding-bottom: 10px;
       padding-top: 16px;
+      @media screen and (max-width: 500px) {
+        display: block;
+      }
     }
     .menu-home {
       margin-left: 25px;
       border-bottom: 1px solid #000000;
+      @media screen and (max-width: 500px) {
+        display: inline;
+      }
     }
+
     .menu-men {
       margin-left: 24px;
+      @media screen and (max-width: 500px) {
+        margin-top: 16px;
+      }
     }
     .menu-woman {
       margin-left: 37px;
+      @media screen and (max-width: 500px) {
+        margin-left: 24px;
+      }
     }
     .menu-kid {
       margin-left: 39px;
+      @media screen and (max-width: 500px) {
+        margin-left: 24px;
+      }
     }
     .menu-sport {
       margin-left: 40px;
+      @media screen and (max-width: 500px) {
+        margin-left: 24px;
+      }
     }
   }
 }
@@ -89,6 +168,9 @@
       margin-bottom: 88px;
       background-color: rgba(217, 217, 217, 0);
       border: 1px solid rgba(0, 0, 0, 0.13);
+      @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+      }
     }
     .carousel-button {
       margin-left: 23px;
@@ -100,18 +182,30 @@
       max-width: 100%;
       height: 500px;
       position: relative;
+      @media screen and (max-width: 768px) {
+        height: 300px;
+      }
       img {
         max-width: 100%;
         position: absolute;
-        width: 821px;
         height: 392px;
         left: calc(86 / 1280 * 100%);
         top: 5px;
+        @media screen and (max-width: 768px) {
+          left: 0;
+          max-height: 100%;
+        }
+        @media screen and (max-width: 300px) {
+          max-width: 350px;
+        }
       }
       .text {
         position: absolute;
         left: calc(930 / 1280 * 100%);
         top: 124px;
+        @media screen and (max-width: 992px) {
+          display: none;
+        }
         h2 {
           @include text($text-4xl, $text-light, $bg-c1-dark);
           line-height: 48.41px;
@@ -141,6 +235,9 @@
         height: (393/500 * 100%);
         left: 0;
         top: 127px;
+        @media screen and (max-width: 768px) {
+          top: 50px;
+        }
       }
     }
   }
@@ -149,6 +246,9 @@
       position: absolute;
       left: 18px;
       top: 175px;
+      @media screen and (max-width: 768px) {
+        top: 100px;
+      }
     }
   }
   .carousel-control-next {
@@ -156,6 +256,9 @@
       position: absolute;
       right: 12.86px;
       top: 175px;
+      @media screen and (max-width: 768px) {
+        top: 100px;
+      }
     }
   }
 }
@@ -164,35 +267,120 @@
 .product {
   padding-bottom: 104px;
   .container {
-    .card-body2 {
-      display: flex;
-      padding: 0;
-      a {
-        @include button(
-          $text-2xl,
-          $text-light,
-          $text-c1-light,
-          $bg-c1-primary,
-          18px 27px 18px 39px,
-          1px solid #f8b653,
-          0
-        );
-        width: calc(175 / 334 * 100%);
-        height: 64px;
+    h2 {
+      text-align: center;
+      margin: 16px 0 90px;
+      @include text($text-4xl, $text-regular, $text-c1-dark);
+    }
+    .row {
+      @media screen and (max-width: 768px) {
+        display: block;
       }
-      span {
-        width: calc(160 / 334 * 100%);
-        height: 64px;
-        line-height: 29.05px;
-        @include button(
-          $text-product-primary,
-          $text-semibold,
-          $text-c1-dark,
-          $bg-c3-light,
-          18px 40px 18px 66px,
-          1px solid #dedddc,
-          0
-        );
+      .col {
+        margin-bottom: 50px;
+        @media screen and (max-width: 1280px) {
+          width: 50%;
+        }
+        @media screen and (max-width: 768px) {
+          max-width: 100%;
+          margin-left: (217 / 1280 * 100%);
+          width: 100%;
+          margin: 0;
+          margin-bottom: 50px;
+          padding: 0;
+        }
+        .card {
+          width: 334px;
+          height: 100%;
+          padding: 45px 57px 0;
+          background-color: $bg-c2-light;
+          @media screen and (max-width: 1280px) {
+            margin-right: calc(117.5 / 1280 * 100%);
+          }
+          @media screen and (max-width: 992px) {
+            margin-left: -2%;
+          }
+          @media screen and (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+          }
+          @media screen and (max-width: 400px) {
+            padding: 0;
+          }
+          img {
+            width: 220px;
+            height: 100%;
+          }
+          .card-body {
+            margin-left: -34px;
+            padding: 0;
+            @media screen and (max-width: 400px) {
+              margin-right: 0;
+              margin-left: 0;
+            }
+            h5 {
+              margin: 30px 0 8px;
+              @include text(
+                $text-product-primary,
+                $text-light !important,
+                $text-c1-dark
+              );
+              line-height: 29.05px;
+              height: 58.09px;
+            }
+            p {
+              margin-bottom: 13px;
+              @include text($text-2xl, $text-light, $text-c3-light);
+              line-height: 29.05px;
+              height: 129.19px;
+            }
+          }
+          .card-body2 {
+            display: flex;
+            height: 64px;
+            margin-left: -57px;
+            margin-right: -57px;
+            @media screen and (max-width: 400px) {
+              margin-right: 0;
+              margin-left: 0;
+              max-width: 100%;
+            }
+            a {
+              @include button(
+                $text-product-primary,
+                $text-extra-light,
+                $text-c1-dark,
+                $bg-c1-primary,
+                17px 27px 17px 39px,
+                1px solid transparent,
+                0
+              );
+              width: calc(175 / 334 * 100%);
+              line-height: 29.05px;
+              @media screen and (max-width: 400px) {
+                padding: 17px 0;
+                max-width: 50%;
+              }
+            }
+            span {
+              @include button(
+                $text-product-primary,
+                $text-semibold,
+                $text-c1-dark,
+                $bg-c3-light,
+                17px 0 17px 66px,
+                1px solid transparent,
+                0
+              );
+              width: calc(160 / 334 * 100%);
+              line-height: 29.05px;
+              @media screen and (max-width: 400px) {
+                padding: 17px 30px;
+                width: 50%;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -206,7 +394,12 @@
     .container {
       .row {
         padding: 20px 40px;
-        .col-4 {
+        @media screen and (max-width: 992px) {
+          margin-left: -3%;
+          margin-right: -3%;
+          padding: 20px 0;
+        }
+        .col-md-4 {
           .item {
             h2 {
               @include text($text-2xl, $text-bold, $text-c1-dark);
@@ -223,7 +416,13 @@
           .item-1 {
             height: 100%;
             border-right: 1px solid #cbc9c9;
+            @media screen and (max-width: 767.9px) {
+              border: none;
+            }
           }
+        }
+        .col-12 {
+          margin-bottom: 20px;
         }
       }
     }
@@ -235,7 +434,7 @@
 
 //register
 .register {
-  .container-fluid{
+  .container-fluid {
     h2 {
       margin-top: 30px;
       text-align: center;
@@ -243,7 +442,7 @@
     }
     form {
       margin: 60px 0 27px;
-      margin-left: calc(120/1280 * 100%);
+      margin-left: calc(120 / 1280 * 100%);
       input {
         width: calc(482 / 1280 * 100%);
         margin-right: calc((100 / 1280 * 100%));
@@ -335,7 +534,15 @@
       margin-left: calc(700 / 1280 * 100%);
       height: 50px;
       width: 290px;
-      @include button($text-3xl,$text-regular,$text-c4-light,$bg-detail-primary,0,1px solid $bg-detail-primary,0);
+      @include button(
+        $text-3xl,
+        $text-regular,
+        $text-c4-light,
+        $bg-detail-primary,
+        0,
+        1px solid $bg-detail-primary,
+        0
+      );
       margin-bottom: 40px;
       margin-top: 60px;
     }

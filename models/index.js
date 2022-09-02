@@ -5,7 +5,7 @@ function renderProductHome(arrProduct) {
     var prod = arrProduct[i];
     html += `
       <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 card2">
         <img src=${prod.image} alt=${prod.alias} />
         <div class="card-body">
           <h5 class="card-title fw-bold">${prod.name}</h5>
@@ -26,10 +26,10 @@ function renderProductHome(arrProduct) {
 function renderProductDetail(arrProduct) {
   var prod = arrProduct;
   var html = `
-    <div class="col-5">
+    <div class="col-5 ">
     <img src=${prod.image} alt=${prod.alias}} />
   </div>
-  <div class="col-7">
+  <div class="col-7 ">
     <h2>${prod.name}</h2>
     <p class="product-desc">
      ${prod.description}

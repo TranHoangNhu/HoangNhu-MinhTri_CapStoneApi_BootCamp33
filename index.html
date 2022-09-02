@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,6 +16,13 @@
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- Main CSS  -->
     <link rel="stylesheet" href="./views/css/index.min.css" />
@@ -25,12 +32,17 @@
   <body>
     <!-- header  -->
     <header class="header">
-      <img src="./views/Images/logo.png" alt="logo" />
-      <div class="header-item">
-        <img src="./views/Images/image 8.png" alt="cart" />
-        <span>(1)</span>
-        <a href="#" class="login">Login</a>
-        <a href="#" class="register">Register</a>
+      <div class="container-fluid">
+        <img src="./views/Images/logo.png" alt="logo" class="logo" />
+        <div class="header-item">
+          <img src="./views/Images/image 8.png" alt="cart" />
+          <span>(1)</span>
+          <div class="header-links">
+            <a href="#" class="header-login">Login</a>
+            <a href="#" class="header-register">Register</a>
+          </div>
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
     </header>
     <!-- menu  -->
@@ -138,8 +150,7 @@
     <section class="product">
       <div class="container">
         <h2 class="text-center my-5">-Product Feature-</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="renderProdApi">
-        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="renderProdApi"></div>
       </div>
     </section>
     <!-- footer  -->
@@ -147,7 +158,7 @@
       <div class="footer-main">
         <div class="container">
           <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="item item-1">
                 <h2>GET HELP</h2>
                 <p>Contact us</p>
@@ -155,7 +166,7 @@
                 <p>Nike+</p>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="item item-1">
                 <h2>ORDERS</h2>
                 <p>Payment Options</p>
@@ -163,7 +174,7 @@
                 <p>Returns</p>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="item">
                 <h2>REGISTER</h2>
                 <p>
@@ -179,7 +190,7 @@
       <div class="footer-bottom footer-main">
         <div class="container">
           <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="item item-1">
                 <h2>EMAIL SIGN UP</h2>
                 <p>
@@ -188,14 +199,14 @@
                 <p class="link">Sign up now</p>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="item item-1">
                 <h2>GIFT CARDS</h2>
                 <p>Give the gifts that always fits</p>
                 <p class="link">View cards</p>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="item">
                 <h2>STORES NEAR YOU</h2>
                 <p>Locate a Nike retail store or authorized retailer.</p>
@@ -213,9 +224,26 @@
       crossorigin="anonymous"
     ></script>
     <!-- Axios  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- Main js  -->
     <script src="./controllers/home_controller.js"></script>
     <script src="./models/index.js"></script>
+    <script>
+      let navSLide = () => {
+        let burger = document.querySelector(".fa-bars");
+        let nav = document.querySelector(".header-links");
+
+        burger.onclick = function () {
+          nav.classList.toggle("nav-active");
+        };
+      };
+
+      navSLide();
+    </script>
   </body>
 </html>
