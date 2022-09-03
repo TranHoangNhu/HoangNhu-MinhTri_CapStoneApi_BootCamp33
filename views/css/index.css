@@ -103,7 +103,8 @@ a {
   left: 0;
   z-index: 100;
   background-color: #000000;
-  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
 }
 .header .container-fluid .header-item i {
   font-size: 16px;
@@ -117,6 +118,15 @@ a {
 @media screen and (max-width: 768px) {
   .header .container-fluid .header-item i {
     display: inline-block;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -499,121 +509,45 @@ a {
   background-color: #dedddc;
 }
 
-.register .container-fluid h2 {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 400;
-  color: #000000;
+.register .container {
+  display: flex;
+  justify-content: space-around;
 }
-.register .container-fluid form {
-  margin: 60px 0 27px;
-  margin-left: 9.375%;
-}
-.register .container-fluid form input {
-  width: 37.65625%;
-  margin-right: 7.8125%;
-  height: 50px;
-  margin-bottom: 30px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 5px solid;
+.register .container .col-l input {
+  border: none;
+  border-bottom: 4px solid #AE18E2;
   outline: none;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(174, 24, 226) 100%);
-}
-.register .container-fluid form input::placeholder {
-  font-size: 30px;
-  font-weight: 400;
-  color: #000000;
-}
-.register .container-fluid form span {
+  width: 400px;
+  padding: 10px 0;
   font-size: 20px;
-  font-weight: 400;
-  color: #f50e0e;
-  position: relative;
-  left: -10.3125%;
 }
-.register .container-fluid form .gender {
-  display: inline;
-  width: 42.5%;
+.register .container .col-r input {
+  border: none;
+  border-bottom: 4px solid #AE18E2;
+  outline: none;
+  padding: 10px 0;
+  padding-right: 200px;
+  font-size: 20px;
 }
-.register .container-fluid form .gender strong {
-  display: inline-block;
-  font-size: 30px;
-  font-weight: 400;
-  color: #000000;
-  margin-right: 28px;
+.register .container .col-r .gender {
+  margin-top: 33px;
+  font-size: 20px;
+  padding-right: 20px;
 }
-.register .container-fluid form .gender label {
-  font-size: 30px;
-  font-weight: 400;
-  color: #000000;
-}
-.register .container-fluid form .gender .radio-custom {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  font-size: 30px;
-  user-select: none;
-  padding-left: 40px;
-  margin-right: 48px;
-  margin-left: 28px;
-}
-.register .container-fluid form .gender .radio-custom input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-.register .container-fluid form .gender .checkmark {
-  position: absolute;
-  top: 0;
-  left: -35px;
-  width: 65px;
-  height: 50px;
-  background: #eee;
-  border-radius: 50%;
-}
-.register .container-fluid form .gender .radio-custom:hover .checkmark {
-  background: #ccc;
-}
-.register .container-fluid form .gender .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.register .container-fluid form .gender .radio-custom .checkmark:after {
-  top: 50%;
-  left: 50%;
-  width: 39.25px;
-  height: 30px;
-  border-radius: 50%;
-  border: solid 3px #ae18e2;
-  transform: translate(-50%, -50%);
-  background-color: #ae18e2;
-}
-.register .container-fluid form .gender .radio-custom input:checked ~ .checkmark {
-  background: #d9d9d9;
-}
-.register .container-fluid form .gender .radio-custom input:checked ~ .checkmark:after {
-  display: block;
-}
-.register .container-fluid button {
-  display: block;
-  margin-left: 54.6875%;
-  height: 50px;
-  width: 290px;
-  font-size: 30px;
-  font-weight: 400;
-  color: #fffcfc;
-  background-color: #AE18E2;
+.register .container .col-r .gender .form-check {
   padding: 0;
-  border: 1px solid #AE18E2;
-  border-radius: 0;
-  cursor: pointer;
-  margin-bottom: 40px;
-  margin-top: 60px;
+}
+.register .container .col-r .gender input {
+  margin: 0 60px;
+  border: 2px solid #AE18E2;
+  margin-bottom: 80px;
+}
+.register .container .col-r .submit a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #AE18E2;
+  font-size: 20px;
+  padding: 10px 80px;
 }
 
 .detail .container-fluid .row .col-5 {

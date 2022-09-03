@@ -1,49 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google Fonts  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Main CSS  -->
-    <link rel="stylesheet" href="../css/index.min.css" />
-    <title>Trang Chi tiết sản phẩm</title>
-  </head>
 
-  <body>
-    <!-- header  -->
-    <header class="header">
-      <img src="../Images/imagelogo.png" alt="logo" />
-      <div class="header-item">
-        <img src="../Images/image 8.png" alt="cart" />
-        <span>(1)</span>
-        <a href="#" class="login">Login</a>
-        <a href="#" class="register">Register</a>
-      </div>
-    </header>
-    <!-- menu  -->
-    <section class="menu">
-      <div class="container">
-        <a href="#" class="menu-home">Home</a>
-        <a href="#" class="menu-men">Men</a>
-        <a href="#" class="menu-woman">Woman</a>
-        <a href="#" class="menu-kid">Kid</a>
-        <a href="#" class="menu-sport">Sport</a>
-      </div>
-    </section>
-    <!-- detail  -->
-    <section class="detail">
-      <div class="container-fluid">
-        <div class="row" id="renderProdDetail">
-          <!-- <div class="col-5">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- import TEMPLATE HTML -->
+  <script src="./layouts_component/header.js"></script>
+  <script src="./layouts_component/menu.js"></script>
+  <script src="./layouts_component/footer.js"></script>
+  <!-- END import TEMPLATE HTML -->
+  <!-- Main CSS  -->
+  <link rel="stylesheet" href="../css/index.min.css" />
+  <title>Trang Chi tiết sản phẩm</title>
+</head>
+
+<body>
+  <!-- header  -->
+  <header id="header" class="header"></header>
+  <!-- menu  -->
+  <section id="navMenu" class="menu"></section>
+  <!-- detail  -->
+  <section class="detail">
+    <div class="container-fluid">
+      <div class="row" id="renderProdDetail">
+        <!-- <div class="col-5">
             <img src="../Images/imageFrame 14.png" alt="" />
           </div>
           <div class="col-7">
@@ -72,14 +60,15 @@
               <button>Add to cart</button>
             </div>
           </div> -->
-        </div>
       </div>
-    </section>
-    <!-- product  -->
-    <section class="product">
-      <div class="container">
-        <h2>-Relate Feature-</h2>
-        <div class="row">
+    </div>
+  </section>
+  <!-- product  -->
+  <section class="product">
+    <div class="container">
+      <h2 class="text-center">-Relate Feature-</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="renderRelatedProdApi"></div>
+      <!-- <div class="row">
           <div class="col-4">
             <div class="item">
               <div class="card-top">
@@ -158,88 +147,33 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <!-- footer  -->
-    <footer class="footer">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <div class="item item-1">
-                <h2>GET HELP</h2>
-                <p>Contact us</p>
-                <p>NIKEiD</p>
-                <p>Nike+</p>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="item item-1">
-                <h2>ORDERS</h2>
-                <p>Payment Options</p>
-                <p>Shipping and delivery</p>
-                <p>Returns</p>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="item">
-                <h2>REGISTER</h2>
-                <p>
-                  Create one account to manage everything you do with Nike, from
-                  your shopping preferences to your Nike+ activity.
-                </p>
-                <p class="link">Learn more</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom footer-main">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <div class="item item-1">
-                <h2>EMAIL SIGN UP</h2>
-                <p>
-                  Be the first to know about new products and special offers.
-                </p>
-                <p class="link">Sign up now</p>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="item item-1">
-                <h2>GIFT CARDS</h2>
-                <p>Give the gifts that always fits</p>
-                <p class="link">View cards</p>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="item">
-                <h2>STORES NEAR YOU</h2>
-                <p>Locate a Nike retail store or authorized retailer.</p>
-                <p class="link">Search</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- bootstrap Js  -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Axios  -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
-      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- Main js  -->
-    <script src="../../controllers/detail_controller.js"></script>
-    <script src="../../models/index.js"></script>
-  </body>
+        </div> -->
+    </div>
+  </section>
+  <!-- footer  -->
+  <footer id="footer" class="footer"></footer>
+  <!-- JS TEMPLATE COMPONENT -->
+  <script>
+    const header = document.getElementById('header');
+    const footer = document.getElementById('footer');
+    const menu = document.getElementById('navMenu');
+    header.innerHTML = createHeader();
+    menu.innerHTML = createNavMenu();
+    footer.innerHTML = createFooter();
+  </script>
+  <!-- END JS TEMPLATE COMPONENT -->
+  <!-- bootstrap Js  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- Axios  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Main js  -->
+  <script src="../../models/products_model.js"></script>
+  <script src="../../controllers/detail_controller.js"></script>
+  <script src="../../models/index.js"></script>
+</body>
+
 </html>

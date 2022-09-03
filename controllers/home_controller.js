@@ -13,4 +13,27 @@ window.onload = function () {
       }
     }
     getDataProductApi();
-  };
+  }; 
+  
+  function renderProductHome(arrProduct) {
+    var html = "";
+    for (var i = 0; i < arrProduct.length; i++) {
+      var prod = arrProduct[i];
+      html += `
+        <div class="col">
+        <div class="card h-100 card2">
+          <img src=${prod.image} alt=${prod.alias} />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">${prod.name}</h5>
+            <p class="card-text">${prod.shortDescription}</p>
+          </div>
+          <div class="card-body2">
+             <a href="./views/layouts/detail.html?productid=${prod.id}" class="btn">Buy now</a>
+             <span class="price">${prod.price}$</span>
+           </div>
+          </div>
+      </div>
+              `;
+    }
+    document.querySelector("#renderProdApi").innerHTML = html;
+  }
