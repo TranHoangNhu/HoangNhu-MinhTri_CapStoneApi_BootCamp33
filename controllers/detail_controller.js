@@ -5,7 +5,7 @@ window.onload = function () {
 
     async function getDataQueryParam(result) {
         try {
-          var result = await axios({
+          let result = await axios({
             url: "https://shop.cyberlearn.vn/api/Product/getbyid?id="+myParam,
             method: "GET",
             //   responseType: 'json'
@@ -21,8 +21,8 @@ window.onload = function () {
     getDataQueryParam();
 }
 function renderProductDetail(arrProduct) {
-  var prod = arrProduct;
-  var html = `
+  let prod = arrProduct;
+  let html = `
     <div class="col-5 ">
     <img src=${prod.image} alt=${prod.alias}} />
   </div>
@@ -63,9 +63,8 @@ https://codepen.io/anitaparmar26/details/BaLYMeN
 */
 
 function renderRelatedProducts(arrRelatedProduct){
-  var html = "";
-  for (var i = 0; i < arrRelatedProduct.length; i++) {
-    var prod = arrRelatedProduct[i];
+  let html = "";
+  for (let prod of arrRelatedProduct) {
     html += `
       <div class="col">
       <div class="card h-100 card2">

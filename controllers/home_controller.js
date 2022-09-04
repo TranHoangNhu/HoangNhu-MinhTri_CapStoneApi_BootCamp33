@@ -16,9 +16,8 @@ window.onload = function () {
   }; 
   
   function renderProductHome(arrProduct) {
-    var html = "";
-    for (var i = 0; i < arrProduct.length; i++) {
-      var prod = arrProduct[i];
+    let html = "";
+    for (let prod of arrProduct) {
       html += `
         <div class="col">
         <div class="card h-100 card2">
