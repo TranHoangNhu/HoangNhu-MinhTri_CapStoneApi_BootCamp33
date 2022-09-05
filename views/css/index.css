@@ -103,8 +103,7 @@ a {
   left: 0;
   z-index: 100;
   background-color: #000000;
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
+  animation: fadeIn 2s;
 }
 .header .container-fluid .header-item i {
   font-size: 16px;
@@ -118,15 +117,6 @@ a {
 @media screen and (max-width: 768px) {
   .header .container-fluid .header-item i {
     display: inline-block;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -325,6 +315,7 @@ a {
 
 .product {
   padding-bottom: 104px;
+  padding: 0 15px;
 }
 .product .container h2 {
   text-align: center;
@@ -471,8 +462,6 @@ a {
 }
 @media screen and (max-width: 992px) {
   .footer .footer-main .container .row {
-    margin-left: -3%;
-    margin-right: -3%;
     padding: 20px 0;
   }
 }
@@ -509,43 +498,206 @@ a {
   background-color: #dedddc;
 }
 
+.register h2 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+}
 .register .container {
   display: flex;
   justify-content: space-around;
 }
+@media screen and (max-width: 992px) {
+  .register .container {
+    display: block;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .register .container .col-l {
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-l {
+    max-width: 100%;
+  }
+}
 .register .container .col-l input {
   border: none;
-  border-bottom: 4px solid #AE18E2;
+  border-bottom: 4px solid #ae18e2;
   outline: none;
   width: 400px;
   padding: 10px 0;
   font-size: 20px;
+  margin-bottom: 23px;
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-l input {
+    width: 100%;
+  }
+}
+.register .container .col-l span {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 20px;
+  font-weight: 40px;
+  color: #f50e0e;
+}
+@media screen and (max-width: 1200px) {
+  .register .container .col-r {
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-r {
+    max-width: 100%;
+  }
+}
+.register .container .col-r .name,
+.register .container .col-r .phone {
+  height: 77px;
+  position: relative;
+  width: 100%;
 }
 .register .container .col-r input {
   border: none;
-  border-bottom: 4px solid #AE18E2;
+  border-bottom: 4px solid #ae18e2;
   outline: none;
   padding: 10px 0;
   padding-right: 200px;
   font-size: 20px;
+  margin-bottom: 23px;
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-r input {
+    width: 100%;
+  }
+}
+.register .container .col-r span {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: 40px;
+  color: #f50e0e;
+}
+@media screen and (max-width: 1200px) {
+  .register .container .col-r span {
+    right: 0;
+  }
 }
 .register .container .col-r .gender {
   margin-top: 33px;
   font-size: 20px;
   padding-right: 20px;
+  width: 100%;
 }
 .register .container .col-r .gender .form-check {
   padding: 0;
 }
 .register .container .col-r .gender input {
   margin: 0 60px;
-  border: 2px solid #AE18E2;
+  border: 2px solid #ae18e2;
   margin-bottom: 80px;
+  margin-left: 30px;
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-r .gender input {
+    width: 70vw;
+  }
+}
+.register .container .col-r .gender .form-check-label {
+  font-size: 30px;
+  font-weight: 400;
+  color: #000000;
+  width: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .register .container .col-r .gender .form-check-label {
+    font-size: 20px;
+  }
+}
+.register .container .col-r .gender .radio-custom {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  user-select: none;
+  padding-left: 40px;
+  margin-left: 28px;
+  max-width: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .register .container .col-r .gender .radio-custom {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-r .gender .radio-custom {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .register .container .col-r .gender .radio-custom {
+    display: block;
+    margin-top: 40px;
+  }
+}
+.register .container .col-r .gender .radio-custom input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-r .gender .radio-custom input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .register .container .col-r .gender .radio-custom input {
+    width: 70%;
+  }
+}
+.register .container .col-r .gender .radio-custom .checkmark {
+  position: absolute;
+  top: -10px;
+  left: -35px;
+  width: 65px;
+  height: 50px;
+  background: #eee;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+.register .container .col-r .gender .radio-custom .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  width: 39.25px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 3px #ae18e2;
+  transform: translate(-50%, -50%);
+  background-color: #ae18e2;
+}
+.register .container .col-r .gender .radio-custom input:checked ~ .checkmark:after {
+  display: block;
+}
+.register .container .col-r .gender .radio-custom label {
+  margin-left: 30px;
+}
+.register .container .col-r .submit {
+  margin: 85px 0 40px;
 }
 .register .container .col-r .submit a {
   text-decoration: none;
   color: #fff;
-  background-color: #AE18E2;
+  background-color: #ae18e2;
   font-size: 20px;
   padding: 10px 80px;
 }

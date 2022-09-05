@@ -78,7 +78,7 @@
         left: 0;
         z-index: 100;
         background-color: $bg-c1-dark;
-        animation: fadeIn 2s ;
+        animation: fadeIn 2s;
       }
       i {
         @include text($text-normal, 0, $text-c2-light);
@@ -266,6 +266,7 @@
 //product
 .product {
   padding-bottom: 104px;
+  padding: 0 15px;
   .container {
     h2 {
       text-align: center;
@@ -395,8 +396,6 @@
       .row {
         padding: 20px 40px;
         @media screen and (max-width: 992px) {
-          margin-left: -3%;
-          margin-right: -3%;
           padding: 20px 0;
         }
         .col-md-4 {
@@ -547,51 +546,173 @@
   //     margin-top: 60px;
   //   }
   // }
-  .container{
+  h2 {
+    text-align: center;
+    margin-top: 30px;
+    @include text($text-4xl, $text-regular, $text-c1-dark);
+  }
+  .container {
     display: flex;
     justify-content: space-around;
-    .col-l{
-        input{
-            border:none;
-            border-bottom: 4px solid #AE18E2;
-            outline: none;
-            width: 400px;
-            padding: 10px 0;
-            font-size: 20px;
-        }
+    @media screen and (max-width: 992px) {
+      display: block;
     }
-    .col-r{
-        input{
-            border:none;
-            border-bottom: 4px solid #AE18E2;
-            outline: none;
-            padding: 10px 0;
-            padding-right: 200px;
-            font-size: 20px;
+    .col-l {
+      @media screen and (max-width: 1200px) {
+        max-width: 50%;
+      }
+      @media screen and (max-width: 992px) {
+        max-width: 100%;
+      }
+      input {
+        border: none;
+        border-bottom: 4px solid #ae18e2;
+        outline: none;
+        width: 400px;
+        padding: 10px 0;
+        font-size: 20px;
+        margin-bottom: 23px;
+        @media screen and (max-width: 992px) {
+          width: 100%;
         }
-        .gender{
-            margin-top: 33px;
-            font-size: 20px;
-            padding-right: 20px;
-            .form-check{
-                padding: 0;
-            }
-            input{
-                margin: 0 60px;
-                border: 2px solid #AE18E2;
-                margin-bottom: 80px;
-            }
+      }
+      span {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        @include text($text-2xl, $text-4xl, $text-c3-secondary);
+      }
+    }
+    .col-r {
+      @media screen and (max-width: 1200px) {
+        max-width: 50%;
+      }
+      @media screen and (max-width: 992px) {
+        max-width: 100%;
+      }
+      .name,
+      .phone {
+        height: 77px;
+        position: relative;
+        width: 100%;
+      }
+      input {
+        border: none;
+        border-bottom: 4px solid #ae18e2;
+        outline: none;
+        padding: 10px 0;
+        padding-right: 200px;
+        font-size: 20px;
+        margin-bottom: 23px;
+        @media screen and (max-width: 992px) {
+          width: 100%;
         }
-        .submit{
-            a{
-                text-decoration: none;
-                color: #fff;
-                background-color:#AE18E2;
-                font-size: 20px;
-                padding: 10px 80px;
-            }
+      }
+      span {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        @include text($text-2xl, $text-4xl, $text-c3-secondary);
+        @media screen and (max-width: 1200px) {
+          right: 0;
         }
-        
+      }
+      .gender {
+        margin-top: 33px;
+        font-size: $text-2xl;
+        padding-right: 20px;
+        width: 100%;
+        .form-check {
+          padding: 0;
+        }
+        input {
+          margin: 0 60px;
+          border: 2px solid #ae18e2;
+          margin-bottom: 80px;
+          margin-left: 30px;
+          @media screen and (max-width: 992px) {
+            width: 70vw;
+          }
+        }
+        .form-check-label {
+          @include text($text-3xl, $text-regular, $text-c1-dark);
+          @media screen and (max-width: 1200px) {
+            font-size: $text-2xl;
+          }
+          width: 100%;
+        }
+        .radio-custom {
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+          font-size: 30px;
+          user-select: none;
+          padding-left: 40px;
+          margin-left: 28px;
+          max-width: 100%;
+          @media screen and (max-width: 1200px) {
+            font-size: $text-2xl;
+            margin-left: 10px;
+          }
+          @media screen and (max-width: 992px) {
+            margin-right: 20px;
+          }
+          @media screen and (max-width: 500px) {
+            display: block;
+            margin-top: 40px;
+          }
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            @media screen and (max-width: 992px) {
+              width: 100%;
+            }
+            @media screen and (max-width: 992px) {
+              width: 70%;
+            }
+          }
+          .checkmark {
+            position: absolute;
+            top: -10px;
+            left: -35px;
+            width: 65px;
+            height: 50px;
+            background: #eee;
+            border-radius: 50%;
+            margin-left: 30px;
+            &::after {
+              content: "";
+              position: absolute;
+              display: none;
+              top: 50%;
+              left: 50%;
+              width: 39.25px;
+              height: 30px;
+              border-radius: 50%;
+              border: solid 3px #ae18e2;
+              transform: translate(-50%, -50%);
+              background-color: #ae18e2;
+            }
+          }
+          input:checked ~ .checkmark:after {
+            display: block;
+          }
+          label {
+            margin-left: 30px;
+          }
+        }
+      }
+      .submit {
+        margin: 85px 0 40px;
+        a {
+          text-decoration: none;
+          color: #fff;
+          background-color: #ae18e2;
+          font-size: 20px;
+          padding: 10px 80px;
+        }
+      }
     }
   }
 }
