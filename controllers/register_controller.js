@@ -6,7 +6,7 @@ window.onload = function () {
     User.passwordConfirm = document.querySelector("#password__confirm").value;
     User.name = document.querySelector("#name").value;
     User.phone = document.querySelector("#phone").value;
-    User.gender = document.querySelector("#gender").value;
+    User.gender = document.querySelector("#gender").checked;
     let promise= axios({
         url:"https://shop.cyberlearn.vn/api/Users/signup",
         method:"POST",
