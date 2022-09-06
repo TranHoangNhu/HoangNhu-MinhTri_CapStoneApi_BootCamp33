@@ -1,0 +1,19 @@
+                                        --- ĐỒ ÁN CAPSTONE API BOOTCAMP 33 --- 
+
+
+
+Thành Viên {
+    >Trần Hoàng Nhu: Link fb: https://www.facebook.com/TranHoangNhu1997/
+           -Làm giao diện /layouts/register.html.
+           -Code logic /controllers/register_controller.js.
+           -Code logic /models/Users_model.js.
+           -Làm phần scss index vài phần thuộc trang mà mình làm.
+           -Edit video và up youtube mô tả đồ án cho cả nhóm.
+    >Lâm Tăng Minh Trí: Link fb: /https://www.facebook.com/ltmt31.01
+          -Làm giao diện /index.html.
+          -Làm giao diện /layouts/detail.html.
+          -Code logic /controllers/home_controller.js.
+          -Code logic /controllers/detail_controller.js.
+          -Làm phần scss base, mixxin, variable , index vài phần thuộc trang mà mình làm.
+          -Code logic /models/products_model.js.
+}
