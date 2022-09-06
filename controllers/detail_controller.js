@@ -23,10 +23,10 @@ window.onload = function () {
 function renderProductDetail(arrProduct) {
   let prod = arrProduct;
   let html = `
-    <div class="col-5 ">
+    <div class="col-12 col-lg-5 ">
     <img src=${prod.image} alt=${prod.alias}} />
   </div>
-  <div class="col-7 ">
+  <div class="col-12 col-lg-7 ">
     <h2>${prod.name}</h2>
     <p class="product-desc">
      ${prod.description}

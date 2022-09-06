@@ -272,6 +272,10 @@
       text-align: center;
       margin: 16px 0 90px;
       @include text($text-4xl, $text-regular, $text-c1-dark);
+      @media screen and (max-width:400px) {
+        font-size: $text-3xl;
+        margin-top:30px;
+      }
     }
     .row {
       @media screen and (max-width: 768px) {
@@ -309,8 +313,7 @@
             padding: 0;
           }
           img {
-            width: 220px;
-            height: 100%;
+            width: 100%;
           }
           .card-body {
             margin-left: -34px;
@@ -328,12 +331,18 @@
               );
               line-height: 29.05px;
               height: 58.09px;
+              @media screen and (max-width:400px) {
+                padding: 0 10px;
+              }
             }
             p {
               margin-bottom: 13px;
               @include text($text-2xl, $text-light, $text-c3-light);
               line-height: 29.05px;
               height: 129.19px;
+              @media screen and (max-width:400px) {
+                padding: 0 10px;
+              }
             }
           }
           .card-body2 {
@@ -376,8 +385,9 @@
               width: calc(160 / 334 * 100%);
               line-height: 29.05px;
               @media screen and (max-width: 400px) {
-                padding: 17px 30px;
+                padding: 17px 30px 0 20px;
                 width: 50%;
+                text-align: right;
               }
             }
           }
@@ -717,22 +727,29 @@
   }
 }
 
-//detail
+// detail
 .detail {
   .container-fluid {
     .row {
-      .col-5 {
-        width: 334px;
-        margin-top: 58px;
-        margin-left: calc(65 / 1280 * 100%);
+      .col-lg-5 {
+
+        // width: calc(334px);
+        padding-top: 58px;
+        padding-left: calc(65 / 1280 * 100%);
         margin-bottom: calc(117 / 1280 * 100%);
-        margin-right: calc(127 / 1280 * 100%);
+        padding-right: calc(127 / 1280 * 100%);
+        @media screen and (max-width:992px) {
+          margin-bottom: 0;
+        }
         img {
           width: 100%;
         }
       }
-      .col-7 {
+      .col-lg-7 {
         margin-top: 67px;
+        @media screen and (max-width:992px) {
+          padding-left: 10%;
+        }
         h2 {
           @include text($text-3xl, $text-light, $text-c1-dark);
           margin-bottom: 10px;
@@ -759,6 +776,12 @@
               1px solid $bg-c4-light,
               0
             );
+            width: 50px;
+            height: 50px;
+            @media screen and (max-width:576px) {
+              display: inline-block;
+              margin-bottom: 10px;
+            }
             margin-right: 20px;
           }
         }
