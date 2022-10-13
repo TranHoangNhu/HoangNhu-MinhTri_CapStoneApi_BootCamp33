@@ -33,7 +33,7 @@ function renderProductDetail(arrProduct) {
     </p>
     <p class="size-text">Available Size</p>
     <div class="size">
-    ${Array(7)
+    ${Array(prod.size.length)
       .join(0)
       .split(0)
       .map(
